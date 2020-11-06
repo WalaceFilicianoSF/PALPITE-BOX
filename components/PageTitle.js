@@ -8,5 +8,4 @@ const PageTitle = ({title}) => {
       </Head>
     )
 }
-
 export default PageTitle
