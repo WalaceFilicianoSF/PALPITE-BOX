@@ -13,7 +13,7 @@ const Pesquisa = () => {
   const [ retorno, setRetorno ] = useState({})
   const save = async () => {
     try {
-    const response = await fetch('/api/save',{
+    const response = await fetch('/api/save', {
       method:'POST',
       body: JSON.stringify(form)
     })
@@ -46,7 +46,7 @@ const onChange = evt => {
           <input type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder='Whatsapp' onChange={onChange} name='Whatsapp' value={form.Whatsapp} />
           <label className='font-bold'>Nota:</label>
           <div className='flex py-6'>
-          {notas.map(nota =>{
+          {notas.map(nota => {
             return(
             <label className=' block w-1/6 text-center '>
               {nota}<br />

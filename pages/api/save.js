@@ -1,6 +1,6 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet'
 import moment from 'moment'
-import {fromBase64} from '../../components/utils/base64'
+import {fromBase64} from '../../utils/base64'
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 
@@ -22,12 +22,12 @@ export default async(req, res) => {
     const sheetConfig = doc.sheetsByIndex[2]
     await sheetConfig.loadCells('A2:B2')
 
-    const mostrarPromocaocell = sheetConfig.getCell(1, 0)
+    const mostrarPromocaoCell = sheetConfig.getCell(1, 0)
     const textoCell = sheetConfig.getCell(1, 1)
 
     let Cupom = ''
     let Promo = ''
-    if (mostrarPromocaocell.value === 'VERDADEIRO') {
+    if (mostrarPromocaoCell.value === 'VERDADEIRO') {
       Cupom = genCupom()
       Promo = textoCell.value
     }
