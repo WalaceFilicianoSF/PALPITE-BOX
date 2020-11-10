@@ -39,7 +39,7 @@ export default async(req, res) => {
         Email: data.Email,
         Whatsapp: data.Whatsapp,
         Nota: parseInt(data.Nota),
-        'Data Preenchimento': moment().format('DD/MM/YYYY HH:mm:ss'),
+        'Data Preenchimento': moment().format('DD/MM/YYYY hh:mm:ss'),
         Cupom,
         Promo
         })
